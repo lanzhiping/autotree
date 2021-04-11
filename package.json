@@ -1,0 +1,24 @@
+{
+  "name": "autotree",
+  "version": "0.0.0",
+  "description": "This is a chrome extension",
+  "scripts": {
+    "dev": "webpack --watch",
+    "build": "NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanzhiping/autotree.git"
+  },
+  "author": "Zhiping Lan <lannano@qq.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/lanzhiping/autotree#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "zip-webpack-plugin": "^3.0.0",
+    "serialize-javascript": ">=3.1.0"
+  }
+}
