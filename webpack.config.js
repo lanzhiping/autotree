@@ -7,7 +7,7 @@ module.exports = {
     mode: process.env.NODE_ENV || 'development',
 
     entry: {
-        background: './src/background.js',
+        contentScript: './src/contentScript.js',
     },
 
     output: {
