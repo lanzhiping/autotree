@@ -1,18 +1,23 @@
 {
   "name": "autotree",
   "version": "1.0.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "author": "Zhiping Lan",
   "description": "File navigator for github pull request",
   "homepage_url": "https://github.com/lanzhiping/autotree",
   "permissions": [
-    "scripting",
     "activeTab"
   ],
   "content_scripts": [{
     "matches": [
       "https://*/*"
     ],
-    "js": ["contentScript.js"]
-  }]
+    "js": ["contentScript.js"],
+    "css": ["contentScript.css"]
+  }],
+  "icons": {
+    "16": "icon/icon_16.png",
+    "32": "icon/icon_32.png",
+    "48": "icon/icon_48.png"
+  }
 }
