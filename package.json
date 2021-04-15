@@ -11,7 +11,7 @@
     "url": "git+https://github.com/lanzhiping/autotree.git"
   },
   "author": "Zhiping Lan <lannano@qq.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "homepage": "https://github.com/lanzhiping/autotree#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
