@@ -1,3 +1,4 @@
+const { waitElement, waitDisappearElement } = require('@1natsu/wait-element');
 const {
     convertToTree,
     renderTree,
@@ -50,15 +51,28 @@ const eventListener = (root) => {
             root.classList.toggle('hide');
         }
     });
+};
+
+const initRendering = (root) => {
+    waitElement('#files')
+        .then(() => waitDisappearElement('#files include-fragment.diff-progressive-loader'))
+        .then(() => render(root));
 
     const filesTab = document.querySelector('#repo-content-pjax-container nav a[href$="files"]');
     if (filesTab) {
         filesTab.addEventListener('click', () => {
-            setTimeout(() => render(root), 1000);
+            waitElement('#files')
+                .then(() => waitDisappearElement('#files include-fragment.diff-progressive-loader'))
+                .then(() => render(root));
         });
     }
-}
+};
 
-const root = renderSidePanel();
-render(root);
-eventListener(root);
+const originOnload = window.onload;
+window.onload = () => {
+    originOnload && originOnload();
+
+    const root = renderSidePanel();
+    initRendering(root);
+    eventListener(root);
+};
