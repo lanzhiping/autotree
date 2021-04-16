@@ -22,11 +22,11 @@ const convertToTree = (fileLinks) => {
             tree[fullPath] = hash;
         } else {
             let map = tree;
-            paths.forEach(path => {
+            paths.forEach((path, index) => {
                 if (map[path]) {
                     map = map[path];
                 } else {
-                    map[path] = path.includes('.') ? hash : {};
+                    map[path] = (index === paths.length - 1) ? hash : {};
                     map = map[path];
                 }
             });
