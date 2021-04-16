@@ -54,6 +54,13 @@ const eventListener = (root) => {
 };
 
 const initRendering = (root) => {
+    const fileLinks = document.querySelectorAll('#files div.file-info a');
+    if (fileLinks.length === 0) {
+        document.body.classList.remove('autotree-show');
+        root.classList.add('hide');
+        return;
+    }
+
     waitElement('#files')
         .then(() => waitDisappearElement('#files include-fragment.diff-progressive-loader'))
         .then(() => render(root));
