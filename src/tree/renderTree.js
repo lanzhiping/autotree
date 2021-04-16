@@ -10,11 +10,14 @@
     }
 */
 
-const fileIcon = document.querySelector('.octicon.octicon-file-diff');
+const getFileStat = (hash) => {
+    const statEle = document.querySelector(`${hash} a[href$="${hash}"]`);
+    return statEle ? statEle.previousElementSibling.outerHTML : '';
+};
 
 const renderFile = (path, hash) => (
     `<li class="autotree-file">
-        ${fileIcon.outerHTML}
+        ${getFileStat(hash)}
         <a href="${hash}">${path}</a>
     </li>`
 );
