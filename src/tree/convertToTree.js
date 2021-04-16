@@ -14,7 +14,7 @@ const convertToTree = (fileLinks) => {
     const tree = {};
 
     Array.prototype.forEach.call(fileLinks, (fileLink) => {
-        const { innerText: fullPath, href } = fileLink;
+        const { title: fullPath, href } = fileLink;
         const hash = new URL(href).hash;
         const paths = fullPath.split('/');
 
