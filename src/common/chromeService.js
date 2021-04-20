@@ -22,8 +22,31 @@ const runOnCurrentTab = (scriptFile) => {
     })
 };
 
+const saveSetting = (integrateOctotree) => new Promise((resolve) => {
+    chrome.storage.sync.set({
+        'autotree-setting': JSON.stringify({
+            integrateOctotree
+        })
+    }, () => resolve());
+});
+
+const getSetting = () => new Promise((resolve) => {
+    chrome.storage.sync.get('autotree-setting', (data) => {
+        let value;
+        try {
+            value = JSON.parse(data['autotree-setting'])
+        } catch (e) {
+            value = { integrateOctotree: false };
+        }
+
+        resolve(value);
+    });
+});
+
 module.exports = {
     runOnCurrentTab,
     onInstalled,
-    onPageChanged
+    onPageChanged,
+    saveSetting,
+    getSetting
 };

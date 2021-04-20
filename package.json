@@ -22,6 +22,7 @@
     "zip-webpack-plugin": "^3.0.0"
   },
   "dependencies": {
-    "@1natsu/wait-element": "^3.0.0"
+    "@1natsu/wait-element": "^3.0.0",
+    "element-resize-event": "^3.0.3"
   }
 }

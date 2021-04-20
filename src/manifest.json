@@ -6,14 +6,15 @@
   "description": "File navigator for github pull request",
   "homepage_url": "https://github.com/lanzhiping/autotree",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "content_scripts": [{
     "matches": [
       "https://*/*"
     ],
-    "js": ["contentScript.js"],
-    "css": ["contentScript.css"]
+    "js": ["contentScript/index.js"],
+    "css": ["contentScript/index.css"]
   }],
   "icons": {
     "16": "icon/icon_16.png",
